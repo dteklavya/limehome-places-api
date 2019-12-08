@@ -84,9 +84,10 @@ def get_lat_long(request):
     ipstack_api_url = app.config["IPSTACK_URL"] + remote_addr + \
                         '?' + "access_key=" + ipstack_api_key
     ips_response = requests.get(ipstack_api_url)
-    print("IPS Response:", ips_response.json())
     if ips_response.status_code == 200:
         ips_data = ips_response.json()
+        if str(ips_data["latitude"]) == "None" or str(ips_data["longitude"]) == "None":
+            return "40.74917,-73.98529"
         lat_long = str(ips_data["latitude"]) + "," + str(ips_data["longitude"])
 
     return lat_long
