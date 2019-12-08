@@ -90,3 +90,11 @@ def get_lat_long(request):
         lat_long = str(ips_data["latitude"]) + "," + str(ips_data["longitude"])
 
     return lat_long
+
+
+# Catch all other requests and return suitable status code with message
+@app.route('/', defaults={'path': ''}, methods=['POST', 'PUT', 'PATCH', 'GET'])
+@app.route('/<path:path>')
+def catch_all(path):
+    raise InvalidUsage('Method Not Allowed', status_code=405)
+
