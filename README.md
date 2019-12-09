@@ -20,7 +20,7 @@
   
     - Development
       - IMPORTANT NOTE: API will return 400 "Invalid Usage" unless .env file in project directory is updated with proper API keys and codes. Please see the .env file and replace appropriate values before proceeding. The docker image will run just fine as it ships with required API keys and codes.
-      - After cloning the git repository:
+      - After cloning the git repository, cd to the prject folder:
         - $ python -m venv venv
         - $ source venv/bin/activate
         - $ pip install -r requirements.txt
