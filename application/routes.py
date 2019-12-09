@@ -44,6 +44,7 @@ def get_root():
     payload = {
         "at": at,
         "q": query,
+        "category": "hotel",
         "app_id": config["HERE_APP_ID"],
         "app_code": config["HERE_APP_CODE"]
     }
